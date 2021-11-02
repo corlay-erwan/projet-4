@@ -1,21 +1,28 @@
 // DOM ELEMENTS MODAL 
 const modalbg = document.querySelector(".bground");
-const modalBtn = document.querySelector(".modal-btn");
+const modalBtn = document.querySelector("#modal-btn");
 const formData = document.querySelectorAll(".formData");
 const closeBtn = document.getElementsByClassName('close');
+const burger= document.getElementById("burger");
 
 // ------ DISPLAY MODAL ------ //
-// LAUNCH MODAL EVENTS
-modalBtn.forEach((btn) => btn.addEventListener('click', launchModal));
-// LAUNCH MODAL FORM
+// addEventListener
+modalBtn.addEventListener('click', launchModal);
+closeBtn[0].addEventListener('click', closeModal);
+burger.addEventListener('click', editNav);
+
+// FONCTION 
+
+//ouvre la modale
 function launchModal() {
     modalbg.style.display = 'block';
 }
-// CLOSE MODAL FORM
+
+//ferme la modale
 function closeModal() {
     modalbg.style.display = 'none';
 }
-closeBtn[0].addEventListener('click', closeModal);
+
 
 // ------ DISPLAY NAV RESPONSIVE ------ //
 // EDIT NAV

@@ -5,9 +5,9 @@
     <meta charset="utf-8" />
     <title>GameOn - Réservation</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans" rel="stylesheet"/>
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
 
   <body>
@@ -22,7 +22,7 @@
           <a href="#"><span>À propos</span></a>
           <a href="#"><span>Contact</span></a>
           <a href="#"><span>Évènements passés</span></a>
-          <a href="javascript:void(0);" class="icon" onclick="editNav()">
+          <a href="#" class="icon" id="burger" onclick="editNav()">
             <i class="fa fa-bars"></i>
           </a>
         </div>
@@ -40,16 +40,14 @@
           Vous aimez jouer ? Notre prochain évènement gaming est ouvert
           aux réservations... Places limitées !
         </p>
-        <button class="btn-signup modal-btn" >
+        <button class="btn-signup modal-btn" id="modal-btn">
           je m'inscris
         </button>
       </div>
       <div class="hero-img">
         <img src="images/bg_img.jpg"alt="img" />
       </div>
-      <button class="btn-signup modal-btn" >
-        je m'inscris
-      </button>
+
     </div>
 
     <!--MODAL-->
@@ -154,8 +152,9 @@
       Copyright 2014 - 2020, GameOn Inc.
     </p>
   </footer>
-  <script src="scripts/app.js"></script>
-  <script src="scripts/notify-toast.js"></script>
+  <script src="scripts/modal.js"></script>
+  <script src="scripts.submittedConfirmation.js"></script>
+  <script src="scripts/formFieldsValidation.js"></script>
 </body>
 
 
