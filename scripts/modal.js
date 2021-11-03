@@ -2,7 +2,7 @@
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelector("#modal-btn");
 const formData = document.querySelectorAll(".formData");
-const closeBtn = document.getElementsByClassName('close');
+const closeBtn = document.getElementsByClassName("close");
 const burger= document.getElementById("burger");
 
 // ------ DISPLAY MODAL ------ //
@@ -27,7 +27,7 @@ function closeModal() {
 // ------ DISPLAY NAV RESPONSIVE ------ //
 // EDIT NAV
 function editNav() {
-    var x = document.getElementById('myTopnav');
+    var x = document.getElementById("myTopnav");
     if (x.className === 'topnav') {
         x.className += ' responsive';
     } else {

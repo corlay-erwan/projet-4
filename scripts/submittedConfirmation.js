@@ -1,7 +1,7 @@
 // DOM ELEMENTS SUBMITTED CONFIRMATION
-const modalSubmit = document.getElementsByClassName('container-confirmation-submit');
-const closeModalSubmit = document.getElementsByClassName('close-modal-submit');
-const closeBtnConfirmation = document.getElementById('close-btn-confirmation');
+const modalSubmit = document.getElementsByClassName("container-confirmation-submit");
+const closeModalSubmit = document.getElementsByClassName("close-modal-submit");
+const closeBtnConfirmation = document.getElementById("close-btn-confirmation");
 
 // ------ SUBMITTED CONFIRMATION ------ //
 // DISPLAY MODAL SUBMIT
