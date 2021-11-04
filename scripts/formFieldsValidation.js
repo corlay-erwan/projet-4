@@ -10,6 +10,7 @@ const checkbox1 = document.getElementById('checkbox1');
 const input = document.getElementsByClassName('text-control');
 const form = document.getElementById('form');
 const regex = /^[a-zA-ZÀ-ÖØ-öø-ÿ]+$/;
+const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 // ------ FORM FIELDS VALIDATION ------ //
 // NAMES CHECK (FIRST NAME AND LAST NAME)
@@ -37,7 +38,6 @@ function checkLastName() {
 
 // EMAIL CHECK
 function checkEmail() {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (email.value.trim().match(re)) {
         email.parentElement.setAttribute('data-error-visible', 'false');
         email.style.border = 'solid #279e7a 0.19rem';
