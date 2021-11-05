@@ -14,7 +14,7 @@ const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9
 
 // ------ FORM FIELDS VALIDATION ------ //
 // NAMES CHECK (FIRST NAME AND LAST NAME)
-function checkFirstName() {
+const checkFirstName = () => {
     if (firstName.value.trim().length < 2 || first.value.trim() === '' || !firstName.value.match(regex)) {
         firstName.parentElement.setAttribute('data-error-visible', 'true');
         firstName.style.border = '2px solid #e54858';
@@ -25,7 +25,7 @@ function checkFirstName() {
     return true;
 }
 
-function checkLastName() {
+const checkLastName = () => {
     if (lastName.value.trim().length < 2 || last.value.trim() === "" || !lastName.value.match(regex)) {
         lastName.parentElement.setAttribute('data-error-visible', 'true');
         lastName.style.border = '2px solid #e54858';
@@ -37,7 +37,7 @@ function checkLastName() {
 }
 
 // EMAIL CHECK
-function checkEmail() {
+const checkEmail = () => {
     if (email.value.trim().match(re)) {
         email.parentElement.setAttribute('data-error-visible', 'false');
         email.style.border = 'solid #279e7a 0.19rem';
@@ -49,7 +49,7 @@ function checkEmail() {
 }
 
 // BIRTHDATE CHECK
-function checkBirthdate() {
+const checkBirthdate = () => {
     if (birthdate.value.trim().length !== 10) {
         birthdate.parentElement.setAttribute('data-error-visible', 'true');
         birthdate.style.border = '2px solid #e54858';
@@ -61,7 +61,7 @@ function checkBirthdate() {
 }
 
 // NUMBER OF TOURNAMENTS CHECK
-function checkTournamentsQuantity() {
+const checkTournamentsQuantity = () => {
     if (quantity.value.trim().length === 0 || isNaN(quantity.value.trim()) === true || quantity.value.trim() < 0) {
         quantity.parentElement.setAttribute('data-error-visible', 'true');
         quantity.style.border = '2px solid #e54858';
@@ -73,7 +73,7 @@ function checkTournamentsQuantity() {
 }
 
 // LOCATIONS CHECK
-function checkLocations() {
+const checkLocations = () => {
     allLocations.setAttribute('data-error-visible', 'true');
     for (let i = 0; i < locations.length; i++) {
         if (locations[i].checked) {
@@ -85,7 +85,7 @@ function checkLocations() {
 }
 
 // TERMS OF USE CHECK CHECK
-function checkCheckBox() {
+const checkCheckBox = () => {
     if (checkbox1.checked === false) {
         checkbox1.parentElement.setAttribute('data-error-visible', 'true');
         return false;
@@ -95,7 +95,7 @@ function checkCheckBox() {
 }
 
 // FORM FIELDS EVENTS
-function formFieldsValidation(element, method, event) {
+const formFieldsValidation = () => (element, method, event) {
     element.addEventListener(event, method);
 }
 formFieldsValidation(firstName, checkFirstName, 'focusout');
@@ -107,7 +107,7 @@ formFieldsValidation(allLocations, checkLocations, 'change');
 formFieldsValidation(checkbox1, checkCheckBox, 'change');
 
 // FOR ALL FIELDS VALIDATION
-function forAllFieldsValidation() {
+const forAllFieldsValidation = () => {
     checkFirstName()
     checkLastName()
     checkEmail()
@@ -117,7 +117,7 @@ function forAllFieldsValidation() {
     checkCheckBox()
 }
 
-function formValidation() {
+const formValidation = () => {
     if (checkFirstName() === true &&
         checkLastName() === true &&
         checkEmail() === true &&
