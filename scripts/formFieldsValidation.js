@@ -14,7 +14,7 @@ const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9
 
 // ------ FORM FIELDS VALIDATION ------ //
 // NAMES CHECK (FIRST NAME AND LAST NAME)
-const checkFirstName = () => {
+function checkFirstName() {
     if (firstName.value.trim().length < 2 || first.value.trim() === '' || !firstName.value.match(regex)) {
         firstName.parentElement.setAttribute('data-error-visible', 'true');
         firstName.style.border = '2px solid #e54858';
@@ -25,7 +25,7 @@ const checkFirstName = () => {
     return true;
 }
 
-const checkLastName = () => {
+function checkLastName() {
     if (lastName.value.trim().length < 2 || last.value.trim() === "" || !lastName.value.match(regex)) {
         lastName.parentElement.setAttribute('data-error-visible', 'true');
         lastName.style.border = '2px solid #e54858';
@@ -37,7 +37,7 @@ const checkLastName = () => {
 }
 
 // EMAIL CHECK
-const checkEmail = () => {
+function checkEmail() {
     if (email.value.trim().match(re)) {
         email.parentElement.setAttribute('data-error-visible', 'false');
         email.style.border = 'solid #279e7a 0.19rem';
@@ -49,7 +49,7 @@ const checkEmail = () => {
 }
 
 // BIRTHDATE CHECK
-const checkBirthdate = () => {
+function checkBirthdate() {
     if (birthdate.value.trim().length !== 10) {
         birthdate.parentElement.setAttribute('data-error-visible', 'true');
         birthdate.style.border = '2px solid #e54858';
@@ -61,7 +61,7 @@ const checkBirthdate = () => {
 }
 
 // NUMBER OF TOURNAMENTS CHECK
-const checkTournamentsQuantity = () => {
+function checkTournamentsQuantity() {
     if (quantity.value.trim().length === 0 || isNaN(quantity.value.trim()) === true || quantity.value.trim() < 0) {
         quantity.parentElement.setAttribute('data-error-visible', 'true');
         quantity.style.border = '2px solid #e54858';
@@ -73,7 +73,7 @@ const checkTournamentsQuantity = () => {
 }
 
 // LOCATIONS CHECK
-const checkLocations = () => {
+function checkLocations() {
     allLocations.setAttribute('data-error-visible', 'true');
     for (let i = 0; i < locations.length; i++) {
         if (locations[i].checked) {
@@ -85,7 +85,7 @@ const checkLocations = () => {
 }
 
 // TERMS OF USE CHECK CHECK
-const checkCheckBox = () => {
+function checkCheckBox() {
     if (checkbox1.checked === false) {
         checkbox1.parentElement.setAttribute('data-error-visible', 'true');
         return false;
@@ -95,7 +95,7 @@ const checkCheckBox = () => {
 }
 
 // FORM FIELDS EVENTS
-const formFieldsValidation = () => (element, method, event) {
+function formFieldsValidation(element, method, event) {
     element.addEventListener(event, method);
 }
 formFieldsValidation(firstName, checkFirstName, 'focusout');
@@ -107,7 +107,7 @@ formFieldsValidation(allLocations, checkLocations, 'change');
 formFieldsValidation(checkbox1, checkCheckBox, 'change');
 
 // FOR ALL FIELDS VALIDATION
-const forAllFieldsValidation = () => {
+function forAllFieldsValidation() {
     checkFirstName()
     checkLastName()
     checkEmail()
@@ -117,7 +117,7 @@ const forAllFieldsValidation = () => {
     checkCheckBox()
 }
 
-const formValidation = () => {
+function formValidation() {
     if (checkFirstName() === true &&
         checkLastName() === true &&
         checkEmail() === true &&
