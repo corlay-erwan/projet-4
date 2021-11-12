@@ -20,7 +20,6 @@ body {
   max-width: 1300px;
 }
 
-
 p {
   margin-bottom: 0;
   padding: 0.5vw;
@@ -105,7 +104,6 @@ main {
   cursor: pointer;
 }
 
-
 .modal-btn:hover {
   background: #3876ac;
 }
@@ -143,7 +141,6 @@ main {
   overflow: auto;
   background-color: rgba(26, 39, 156, 0.4);
 }
-
 
 .content {
   margin: 5% auto;
@@ -188,7 +185,7 @@ input {
 
 .formData[data-error]::after {
   content: attr(data-error);
-  font-size: 0.2em;
+  font-size: 0.8em;
   color: #e54858;
   display: block;
   margin-top: 7px;
@@ -252,12 +249,12 @@ input[data-error]::after {
   display: none;
 }
 
-.checkbox-input:checked+.checkbox-label .checkbox-icon::after,
-.checkbox-input:checked+.checkbox2-label .checkbox-icon::after {
+.checkbox-input:checked + .checkbox-label .checkbox-icon::after,
+.checkbox-input:checked + .checkbox2-label .checkbox-icon::after {
   opacity: 1;
 }
 
-.checkbox-input:checked+.checkbox2-label .checkbox-icon {
+.checkbox-input:checked + .checkbox2-label .checkbox-icon {
   background: #279e7a;
 }
 
@@ -424,7 +421,7 @@ input[data-error]::after {
   top: 0;
 }
 
-.hero-content>* {
+.hero-content > * {
   position: relative;
   z-index: 1;
 }
@@ -473,7 +470,7 @@ input[data-error]::after {
   font-weight: bolder;
 }
 
-.hero-section>.btn-signup {
+.hero-section > .btn-signup {
   display: none;
 }
 
@@ -498,7 +495,7 @@ footer {
 /* CONFIRMATION SUBMIT MODAL */
 .container-confirmation-submit {
   display: none;
-  background-color: rgba(35, 35, 35, .5);
+  background-color: rgba(35, 35, 35, 0.5);
   width: 100%;
   height: 200vh;
   justify-content: center;
@@ -528,7 +525,7 @@ footer {
   opacity: 1;
   cursor: pointer;
   transform: scale(0.7);
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .close-modal-submit:before,
@@ -653,7 +650,7 @@ footer {
     margin-top: 40px;
   }
 
-  .hero-section>.btn-signup {
+  .hero-section > .btn-signup {
     display: block;
     margin: 32px auto 10px;
     padding: 12px 35px;
