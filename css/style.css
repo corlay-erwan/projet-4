@@ -182,6 +182,12 @@ input {
   font-size: 20px;
   height: 48px;
 }
+.error {
+  border: 2px solid red;
+}
+.success {
+  border: solid #279e7a 0.19rem;
+}
 
 .formData[data-error]::after {
   content: attr(data-error);

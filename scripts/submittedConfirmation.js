@@ -13,7 +13,7 @@ function displayModalSubmit() {
 // CLOSE SUBMIT
 function closeSubmit() {
     modalSubmit[0].style.display = 'none';
-    first.style.border = 'none';
+    firstName.style.border = 'none';
     last.style.border = 'none';
     email.style.border = 'none';
     birthdate.style.border = 'none';

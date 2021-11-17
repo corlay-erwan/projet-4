@@ -9,67 +9,98 @@ const locations = document.querySelectorAll('#allLocations .checkbox-input');
 const checkbox1 = document.getElementById('checkbox1');
 const input = document.getElementsByClassName('text-control');
 const form = document.getElementById('form');
-const regex = /^[a-zA-ZÀ-ÖØ-öø-ÿ]+$/;
-const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const regexName = /^[a-zA-ZÀ-ÖØ-öø-ÿ]+$/;
+const regexEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 // ------ FORM FIELDS VALIDATION ------ //
 // NAMES CHECK (FIRST NAME AND LAST NAME)
-function checkFirstName() {
-    if (firstName.value.trim().length < 2 || first.value.trim() === '' || !firstName.value.match(regex)) {
-        firstName.parentElement.setAttribute('data-error-visible', 'true');
-        firstName.style.border = '2px solid #e54858';
-        return false;
-    }
-    first.parentElement.setAttribute('data-error-visible', 'false');
-    first.style.border = 'solid #279e7a 0.19rem';
+function setError(element) {
+    element.parentElement.setAttribute('data-error-visible', 'true');
+    element.classList.remove("sucess");
+    element.classList.add("error");
+
+    return false;
+}
+function setSuccess(element) {
+    element.parentElement.setAttribute('data-error-visible', 'false');
+    element.classList.remove("error");
+    element.classList.add("success");
+
     return true;
 }
+function checkFirstName() {
+    if (firstName.value.trim().length < 2 || firstName.value.trim() === '' || !firstName.value.match(regexName)) {
+        //  firstName.parentElement.setAttribute('data-error-visible', 'true');
+        // firstName.classList.add("error");
+        //return false;
+        return setError(firstName);
+
+    }
+    //firstName.parentElement.setAttribute('data-error-visible', 'false');
+    //firstName.classList.add("success");
+    //return true;
+    return setSuccess(firstName);
+}
+
 
 function checkLastName() {
-    if (lastName.value.trim().length < 2 || last.value.trim() === "" || !lastName.value.match(regex)) {
-        lastName.parentElement.setAttribute('data-error-visible', 'true');
-        lastName.style.border = '2px solid #e54858';
-        return false;
+    if (lastName.value.trim().length < 2 || lastName.value.trim() === "" || !lastName.value.match(regexName)) {
+        // lastName.parentElement.setAttribute('data-error-visible', 'true');
+        // lastName.classList.add("error");
+        // return false;
+        return setError(lastName);
     }
-    last.parentElement.setAttribute('data-error-visible', 'false');
-    last.style.border = 'solid #279e7a 0.19rem';
-    return true;
+    //lastName.parentElement.setAttribute('data-error-visible', 'false');
+    //lastName.classList.add("success");
+    // return true;
+    return setSuccess(lastName);
 }
 
 // EMAIL CHECK
 function checkEmail() {
-    if (email.value.trim().match(re)) {
-        email.parentElement.setAttribute('data-error-visible', 'false');
-        email.style.border = 'solid #279e7a 0.19rem';
-        return true;
+    if (email.value.trim().match(regexEmail)) {
+        // email.parentElement.setAttribute('data-error-visible', 'true');
+        // email.classList.add("error");
+        // return false;
+        return setError(email);
     }
+
     email.parentElement.setAttribute('data-error-visible', 'true');
-    email.style.border = '2px solid #e54858';
-    return false;
+    //lastName.parentElement.setAttribute('data-error-visible', 'false');
+    // email.classList.add("success");
+    //return true;
+    return setSuccess(email);
 }
+
+
 
 // BIRTHDATE CHECK
 function checkBirthdate() {
     if (birthdate.value.trim().length !== 10) {
-        birthdate.parentElement.setAttribute('data-error-visible', 'true');
-        birthdate.style.border = '2px solid #e54858';
-        return false;
+        // birthdate.parentElement.setAttribute('data-error-visible', 'true');
+        // birthdate.classList.add("error");
+        // return false;
+        return setError(birthdate);
+
     }
-    birthdate.parentElement.setAttribute('data-error-visible', 'false');
-    birthdate.style.border = 'solid #279e7a 0.19rem';
-    return true;
+    // birthdate.parentElement.setAttribute('data-error-visible', 'false');
+    // birthdate.classList.add("error");
+    // return true;
+    return setSuccess(birthdate);
 }
 
 // NUMBER OF TOURNAMENTS CHECK
 function checkTournamentsQuantity() {
     if (quantity.value.trim().length === 0 || isNaN(quantity.value.trim()) === true || quantity.value.trim() < 0) {
-        quantity.parentElement.setAttribute('data-error-visible', 'true');
-        quantity.style.border = '2px solid #e54858';
-        return false;
+        // quantity.parentElement.setAttribute('data-error-visible', 'true');
+        // quantity.style.border = '2px solid #e54858';
+        // return false;
+        return setError(tournamentsQuantity);
     }
-    quantity.parentElement.setAttribute('data-error-visible', 'false');
-    quantity.style.border = 'solid #279e7a 0.19rem';
-    return true;
+    // quantity.parentElement.setAttribute('data-error-visible', 'false');
+    // quantity.style.border = 'solid #279e7a 0.19rem';
+    // return true;
+    return setSuccess(tournamentsQuantity);
 }
 
 // LOCATIONS CHECK
