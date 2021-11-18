@@ -95,12 +95,12 @@ function checkTournamentsQuantity() {
         // quantity.parentElement.setAttribute('data-error-visible', 'true');
         // quantity.style.border = '2px solid #e54858';
         // return false;
-        return setError(tournamentsQuantity);
+        return setError(TournamentsQuantity);
     }
     // quantity.parentElement.setAttribute('data-error-visible', 'false');
     // quantity.style.border = 'solid #279e7a 0.19rem';
     // return true;
-    return setSuccess(tournamentsQuantity);
+    return setSuccess(TournamentsQuantity);
 }
 
 // LOCATIONS CHECK
