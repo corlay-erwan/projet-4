@@ -62,14 +62,14 @@ function checkEmail() {
         // email.parentElement.setAttribute('data-error-visible', 'true');
         // email.classList.add("error");
         // return false;
-        return setError(email);
+        return setSuccess(email);
     }
 
     email.parentElement.setAttribute('data-error-visible', 'true');
     //lastName.parentElement.setAttribute('data-error-visible', 'false');
     // email.classList.add("success");
     //return true;
-    return setSuccess(email);
+    return setError(email);
 }
 
 
@@ -95,12 +95,12 @@ function checkTournamentsQuantity() {
         // quantity.parentElement.setAttribute('data-error-visible', 'true');
         // quantity.style.border = '2px solid #e54858';
         // return false;
-        return setError(TournamentsQuantity);
+        return setError(quantity);
     }
     // quantity.parentElement.setAttribute('data-error-visible', 'false');
     // quantity.style.border = 'solid #279e7a 0.19rem';
     // return true;
-    return setSuccess(TournamentsQuantity);
+    return setSuccess(quantity);
 }
 
 // LOCATIONS CHECK
