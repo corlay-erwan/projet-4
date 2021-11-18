@@ -65,8 +65,7 @@ function checkEmail() {
         return setSuccess(email);
     }
 
-    email.parentElement.setAttribute('data-error-visible', 'true');
-    //lastName.parentElement.setAttribute('data-error-visible', 'false');
+    // email.parentElement.setAttribute('data-error-visible', 'true');
     // email.classList.add("success");
     //return true;
     return setError(email);
