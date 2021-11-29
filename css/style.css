@@ -92,6 +92,14 @@ main {
   align-items: center;
 }
 
+.footer {
+  margin: 20px;
+  padding: 10px;
+  font-family: var(--font-slab);
+}
+
+/* Modal form */
+
 .modal-btn {
   font-size: 145%;
   background: #fe142f;
@@ -107,14 +115,6 @@ main {
 .modal-btn:hover {
   background: #3876ac;
 }
-
-.footer {
-  margin: 20px;
-  padding: 10px;
-  font-family: var(--font-slab);
-}
-
-/* Modal form */
 .btn-submit {
   background: #fe142f;
   margin-top: 0.5em;
