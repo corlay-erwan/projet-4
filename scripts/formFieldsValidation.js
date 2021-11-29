@@ -30,44 +30,27 @@ function setSuccess(element) {
 }
 function checkFirstName() {
     if (firstName.value.trim().length < 2 || firstName.value.trim() === '' || !firstName.value.match(regexName)) {
-        //  firstName.parentElement.setAttribute('data-error-visible', 'true');
-        // firstName.classList.add("error");
-        //return false;
         return setError(firstName);
-
     }
-    //firstName.parentElement.setAttribute('data-error-visible', 'false');
-    //firstName.classList.add("success");
-    //return true;
+
     return setSuccess(firstName);
 }
 
 
 function checkLastName() {
     if (lastName.value.trim().length < 2 || lastName.value.trim() === "" || !lastName.value.match(regexName)) {
-        // lastName.parentElement.setAttribute('data-error-visible', 'true');
-        // lastName.classList.add("error");
-        // return false;
         return setError(lastName);
     }
-    //lastName.parentElement.setAttribute('data-error-visible', 'false');
-    //lastName.classList.add("success");
-    // return true;
+
     return setSuccess(lastName);
 }
 
 // EMAIL CHECK
 function checkEmail() {
     if (email.value.trim().match(regexEmail)) {
-        // email.parentElement.setAttribute('data-error-visible', 'true');
-        // email.classList.add("error");
-        // return false;
         return setSuccess(email);
     }
 
-    // email.parentElement.setAttribute('data-error-visible', 'true');
-    // email.classList.add("success");
-    //return true;
     return setError(email);
 }
 
@@ -76,29 +59,18 @@ function checkEmail() {
 // BIRTHDATE CHECK
 function checkBirthdate() {
     if (birthdate.value.trim().length !== 10) {
-        // birthdate.parentElement.setAttribute('data-error-visible', 'true');
-        // birthdate.classList.add("error");
-        // return false;
         return setError(birthdate);
-
     }
-    // birthdate.parentElement.setAttribute('data-error-visible', 'false');
-    // birthdate.classList.add("error");
-    // return true;
+
     return setSuccess(birthdate);
 }
 
 // NUMBER OF TOURNAMENTS CHECK
 function checkTournamentsQuantity() {
     if (quantity.value.trim().length === 0 || isNaN(quantity.value.trim()) === true || quantity.value.trim() < 0) {
-        // quantity.parentElement.setAttribute('data-error-visible', 'true');
-        // quantity.style.border = '2px solid #e54858';
-        // return false;
         return setError(quantity);
     }
-    // quantity.parentElement.setAttribute('data-error-visible', 'false');
-    // quantity.style.border = 'solid #279e7a 0.19rem';
-    // return true;
+
     return setSuccess(quantity);
 }
 
@@ -165,7 +137,7 @@ form.addEventListener('submit', function (e) {
     e.preventDefault();
     if (formValidation() == true) {
         displayModalSubmit();
-        document.querySelector('form').reset();
+        form.reset();
     } else {
         forAllFieldsValidation();
     }
