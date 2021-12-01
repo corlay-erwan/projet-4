@@ -9,7 +9,7 @@ const locations = document.querySelectorAll('#allLocations .checkbox-input');
 const checkbox1 = document.getElementById('checkbox1');
 const input = document.getElementsByClassName('text-control');
 const form = document.getElementById('form');
-const regexName = /^[a-zA-ZÀ-ÖØ-öø-ÿ]+$/;
+const regexName = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u;
 const regexEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 // ------ FORM FIELDS VALIDATION ------ //
